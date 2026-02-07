@@ -76,7 +76,7 @@ export default function Home() {
       <Navbar />
       <section className="home-banner" id="home">
         {/* Background image */}
-        <div className="banner-bg-image" style={{ backgroundImage: `url(${Fondo})` }}></div>
+        <img src={Fondo} className="banner-bg-image" alt="" />
         
         {/* Animated overlay elements - black and white only */}
         <div className="banner-bg">
