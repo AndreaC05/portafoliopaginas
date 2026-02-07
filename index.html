@@ -1,13 +1,226 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
+    <!-- Meta Tags Básicos -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portafoliopaginas</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Andrea Aguirre | Desarrollador Full Stack</title>
+    <meta name="description" content="Desarrollador Full Stack con +5 años de experiencia. Especializado en React.js, Node.js, Express y MySQL. Creando aplicaciones web modernas y escalables en Lima, Perú. +50 proyectos completados." />
+    <meta name="keywords" content="desarrollador full stack, react developer, node.js, mysql, express, desarrollo web, programador peru, lima, frontend developer, backend developer, javascript, html, css, portfolio desarrollador" />
+    <meta name="author" content="Andrea Aguirre" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="language" content="Spanish" />
+    <meta name="geo.region" content="PE-LIM" />
+    <meta name="geo.placename" content="Lima" />
+    <meta name="geo.position" content="-12.046374;-77.042793" />
+    <meta name="ICBM" content="-12.046374, -77.042793" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://portafoliodesarrolladorfullstack.netlify.app/" />
+    <meta property="og:title" content="Andrea Aguirre - Desarrollador Full Stack | Portfolio" />
+    <meta property="og:description" content="Portfolio profesional de Andrea Aguirre. Desarrollador Full Stack especializado en React, Node.js y MySQL. +50 proyectos completados, +5 años de experiencia." />
+    <meta property="og:image" content="https://portafoliodesarrolladorfullstack.netlify.app/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://portafoliodesarrolladorfullstack.netlify.app/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Andrea Aguirre - Desarrollador Full Stack Portfolio" />
+    <meta property="og:locale" content="es_PE" />
+    <meta property="og:site_name" content="Andrea Aguirre | Desarrollador Full Stack" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://portafoliodesarrolladorfullstack.netlify.app/" />
+    <meta name="twitter:title" content="Andrea Aguirre - Desarrollador Full Stack" />
+    <meta name="twitter:description" content="Portfolio profesional. Desarrollador Full Stack con React, Node.js y MySQL. Creando soluciones digitales innovadoras en Lima, Perú." />
+    <meta name="twitter:image" content="https://portafoliodesarrolladorfullstack.netlify.app/twitter-image.jpg" />
+    <meta name="twitter:image:alt" content="Andrea Aguirre Portfolio" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/src/assets/logo.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://portafoliodesarrolladorfullstack.netlify.app/" />
+    
+    <!-- Preconnect para mejorar rendimiento -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="//images.unsplash.com" />
+    
+    <!-- Structured Data / Schema.org - Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Andrea Aguirre",
+      "url": "https://portafoliodesarrolladorfullstack.netlify.app",
+      "image": "https://portafoliodesarrolladorfullstack.netlify.app/profile-image.jpg",
+      "jobTitle": "Desarrollador Full Stack",
+      "description": "Desarrollador Full Stack con más de 5 años de experiencia especializado en React.js, Node.js, Express y MySQL. +50 proyectos completados.",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lima",
+        "addressRegion": "Lima",
+        "addressCountry": "PE"
+      },
+      "email": "aguirreandrea457@gmail.com",
+      "telephone": "+51950874416",
+      "sameAs": [
+        "https://github.com/AndreaC05",
+        "https://www.linkedin.com/in/andrea-celeste-r/"
+      ],
+      "knowsAbout": [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MySQL",
+        "MongoDB",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Full Stack Development",
+        "Web Development",
+        "Frontend Development",
+        "Backend Development"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Tu Universidad/Bootcamp"
+      },
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Full Stack Developer",
+        "occupationLocation": {
+          "@type": "City",
+          "name": "Lima"
+        },
+        "skills": "React, Node.js, Express, MySQL, JavaScript, HTML, CSS"
+      }
+    }
+    </script>
+    
+    <!-- Structured Data - WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Andrea Aguirre Portfolio",
+      "alternateName": "Portfolio Desarrollador Full Stack",
+      "url": "https://portafoliodesarrolladorfullstack.netlify.app",
+      "description": "Portfolio profesional de Andrea Aguirre, Desarrollador Full Stack especializado en React, Node.js y MySQL",
+      "publisher": {
+        "@type": "Person",
+        "name": "Andrea Aguirre"
+      },
+      "inLanguage": "es-PE",
+      "copyrightYear": 2024,
+      "creator": {
+        "@type": "Person",
+        "name": "Andrea Aguirre"
+      }
+    }
+    </script>
+    
+    <!-- Structured Data - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://portafoliodesarrolladorfullstack.netlify.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Proyectos",
+          "item": "https://portafoliodesarrolladorfullstack.netlify.app/projects"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Habilidades",
+          "item": "https://portafoliodesarrolladorfullstack.netlify.app/skills"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Contacto",
+          "item": "https://portafoliodesarrolladorfullstack.netlify.app/contact"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Structured Data - ProfessionalService -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Andrea Aguirre - Servicios de Desarrollo Web",
+      "description": "Servicios profesionales de desarrollo web Full Stack. Especializado en aplicaciones React, Node.js y MySQL.",
+      "url": "https://portafoliodesarrolladorfullstack.netlify.app",
+      "telephone": "+51950874416",
+      "email": "aguirreandrea457@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lima",
+        "addressCountry": "PE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-12.046374",
+        "longitude": "-77.042793"
+      },
+      "priceRange": "$$",
+      "serviceType": [
+        "Desarrollo Web",
+        "Desarrollo Full Stack",
+        "Desarrollo Frontend",
+        "Desarrollo Backend"
+      ]
+    }
+    </script>
   </head>
   <body>
+    <!-- Contenedor principal -->
     <div id="root"></div>
+    
+    <!-- Script principal -->
     <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Noscript fallback -->
+    <noscript>
+      <div style="text-align: center; padding: 50px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: #ffffff; min-height: 100vh;">
+        <h1 style="font-size: 2rem; margin-bottom: 20px;">⚠️ JavaScript está deshabilitado</h1>
+        <p style="font-size: 1.2rem; margin-bottom: 15px;">Este portafolio requiere JavaScript para funcionar correctamente.</p>
+        <p style="font-size: 1rem; color: #d0d0d0;">Por favor, habilita JavaScript en tu navegador para ver el contenido.</p>
+        <br>
+        <p style="font-size: 0.9rem; color: #909090;">Andrea Aguirre - Desarrollador Full Stack</p>
+        <p style="font-size: 0.9rem; color: #909090;">📧 aguirreandrea457@gmail.com | 📱 +51 950 874 416</p>
+      </div>
+    </noscript>
   </body>
 </html>
