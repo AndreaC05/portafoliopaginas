@@ -1,17 +1,82 @@
+import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "primereact/button";
-import { Badge } from "primereact/badge";
 import Fondo from "../assets/Fondo.png";
 import Navbar from "../components/Navbar";
 import "../style/Home.css";
 
 export default function Home() {
+  const navigate = useNavigate();
+  const [counters, setCounters] = useState({
+    proyectos: 0,
+    experiencia: 0,
+    clientes: 0
+  });
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const statsRef = useRef(null);
+
+  // Valores finales
+  const finalValues = {
+    proyectos: 50,
+    experiencia: 3,
+    clientes: 30
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true);
+            animateCounters();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => {
+      if (statsRef.current) {
+        observer.unobserve(statsRef.current);
+      }
+    };
+  }, [hasAnimated]);
+
+  const animateCounters = () => {
+    const duration = 2000; // 2 segundos
+    const frameDuration = 1000 / 60; // 60 FPS
+    const totalFrames = Math.round(duration / frameDuration);
+
+    let frame = 0;
+
+    const counter = setInterval(() => {
+      frame++;
+      const progress = frame / totalFrames;
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4); // Easing function
+
+      setCounters({
+        proyectos: Math.round(easeOutQuart * finalValues.proyectos),
+        experiencia: Math.round(easeOutQuart * finalValues.experiencia),
+        clientes: Math.round(easeOutQuart * finalValues.clientes)
+      });
+
+      if (frame === totalFrames) {
+        clearInterval(counter);
+        setCounters(finalValues); // Asegurar valores finales exactos
+      }
+    }, frameDuration);
+  };
+
   return (
     <>
       <Navbar />
       <section className="home-banner" id="home">
         {/* Background image */}
-        <img className="banner-bg-image" src={Fondo} alt="" />
-        {/* <div className="banner-bg-image" style={{ backgroundImage: `url(${Fondo})` }}></div> */}
+        <div className="banner-bg-image" style={{ backgroundImage: `url(${Fondo})` }}></div>
         
         {/* Animated overlay elements - black and white only */}
         <div className="banner-bg">
@@ -24,7 +89,6 @@ export default function Home() {
 
         {/* Content */}
         <div className="banner-content">
-
           <h1 className="banner-title">
             Desarrollador <span className="title-highlight"> Full Stack</span>
             <br />
@@ -37,19 +101,19 @@ export default function Home() {
             innovadoras.
           </p>
 
-          <div className="banner-stats">
+          <div className="banner-stats" ref={statsRef}>
             <div className="stat-item">
-              <div className="stat-number">50+</div>
+              <div className="stat-number">{counters.proyectos}+</div>
               <div className="stat-label">Proyectos Completados</div>
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
-              <div className="stat-number">5+</div>
+              <div className="stat-number">{counters.experiencia}+</div>
               <div className="stat-label">Años de Experiencia</div>
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
-              <div className="stat-number">30+</div>
+              <div className="stat-number">{counters.clientes}+</div>
               <div className="stat-label">Clientes Satisfechos</div>
             </div>
           </div>
@@ -60,22 +124,14 @@ export default function Home() {
               icon="pi pi-arrow-right"
               iconPos="right"
               className="btn-primary"
-              onClick={() =>
-                document
-                  .getElementById("projects")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => navigate('/projects')}
             />
             <Button
               label="Contáctame"
               icon="pi pi-send"
               className="btn-secondary"
               outlined
-              onClick={() =>
-                document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => navigate('/contact')}
             />
           </div>
 
@@ -97,7 +153,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
       </section>
     </>
   );

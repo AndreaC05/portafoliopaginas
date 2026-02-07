@@ -6,52 +6,63 @@ export default function Proyectos() {
   const proyectos = [
     {
       id: 1,
-      titulo: "E-Commerce Platform",
-      imagen: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
-      descripcion: "Plataforma de comercio electrónico con React y Node.js",
-      tecnologias: ["React", "Node.js", "MongoDB", "Stripe"],
-      link: "https://github.com/tu-usuario/proyecto1"
+      titulo: "Landing Page",
+      imagen:
+        "https://res.cloudinary.com/dnao6nouz/image/upload/v1770477003/Demo1_g7jlql.png",
+      descripcion:
+        "Landing page promocional con diseño claro, secciones informativas y formulario de contacto para presentar servicios o productos.",
+      tecnologias: ["React", "HTML5", "CSS3", "JavaScript"],
+      link: "https://tarjetadigitales.netlify.app/",
     },
     {
       id: 2,
-      titulo: "Dashboard Analytics",
-      imagen: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-      descripcion: "Dashboard interactivo para análisis de datos en tiempo real",
-      tecnologias: ["React", "D3.js", "Firebase", "TypeScript"],
-      link: "https://github.com/tu-usuario/proyecto2"
+      titulo: "Web Corporativa",
+      imagen:
+        "https://res.cloudinary.com/dnao6nouz/image/upload/v1770477513/Demo2_nrbe6g.png",
+      descripcion:
+        "Sitio web corporativo que presenta servicios profesionales de diseño web con secciones de portafolio y contacto.",
+      tecnologias: ["React", "HTML5", "CSS3", "JavaScript"],
+      link: "https://innovate-design.netlify.app/",
     },
     {
       id: 3,
-      titulo: "Task Management App",
-      imagen: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&h=600&fit=crop",
-      descripcion: "Aplicación de gestión de tareas con funcionalidades avanzadas",
-      tecnologias: ["Next.js", "PostgreSQL", "Prisma", "TailwindCSS"],
-      link: "https://github.com/tu-usuario/proyecto3"
+      titulo: "Web Corporativa",
+      imagen:
+        "https://res.cloudinary.com/dnao6nouz/image/upload/v1770477514/Demo3_inwosv.png",
+      descripcion:
+        "Sitio web institucional para mostrar información de la marca o producto con diseño moderno y navegación clara.",
+      tecnologias: ["React", "HTML5", "CSS3", "JavaScript"],
+      link: "https://demoalthus.netlify.app/",
     },
     {
       id: 4,
-      titulo: "Social Media Platform",
-      imagen: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
-      descripcion: "Red social con chat en tiempo real y sistema de notificaciones",
-      tecnologias: ["React", "Socket.io", "Express", "Redis"],
-      link: "https://github.com/tu-usuario/proyecto4"
+      titulo: "Landing Page",
+      imagen:
+        "https://res.cloudinary.com/dnao6nouz/image/upload/v1770477513/Demo4_kgknhb.png",
+      descripcion:
+        "Landing page con estructura de presentación rápida orientada a captar atención e invitar a la acción del usuario.",
+      tecnologias: ["React", "HTML5", "CSS3", "JavaScript"],
+      link: "https://landingpagesdemo1.netlify.app/",
     },
     {
       id: 5,
-      titulo: "AI Content Generator",
-      imagen: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
-      descripcion: "Generador de contenido impulsado por IA",
-      tecnologias: ["React", "OpenAI API", "Node.js", "MongoDB"],
-      link: "https://github.com/tu-usuario/proyecto5"
+      titulo: "Landing Page",
+      imagen:
+        "https://res.cloudinary.com/dnao6nouz/image/upload/v1770477512/Demo5_hazn9y.png",
+      descripcion:
+        "Portafolio web personal que muestra proyectos, habilidades y datos de contacto de forma visual y profesional.",
+      tecnologias: ["React", "HTML5", "CSS3", "JavaScript"],
+      link: "https://andrea-aguirre-portafolio.netlify.app/",
     },
-    {
-      id: 6,
-      titulo: "Fitness Tracker",
-      imagen: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop",
-      descripcion: "App para seguimiento de ejercicios y nutrición",
-      tecnologias: ["React Native", "Firebase", "Redux", "Charts.js"],
-      link: "https://github.com/tu-usuario/proyecto6"
-    }
+
+    // {
+    //   id: 6,
+    //   titulo: "Fitness Tracker",
+    //   imagen: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop",
+    //   descripcion: "App para seguimiento de ejercicios y nutrición",
+    //   tecnologias: ["React Native", "Firebase", "Redux", "Charts.js"],
+    //   link: "https://github.com/tu-usuario/proyecto6"
+    // }
   ];
 
   return (
@@ -59,7 +70,7 @@ export default function Proyectos() {
       <Navbar />
       <div className="proyectos-page">
         {/* Fixed Background */}
-        <img src={Fondo} alt="" className="proyectos-background"/>
+        <img src={Fondo} alt="" className="proyectos-background" />
 
         {/* Scrollable Content */}
         <section className="proyectos-section">
@@ -67,7 +78,8 @@ export default function Proyectos() {
             <div className="proyectos-header">
               <h1 className="proyectos-title">Mis Proyectos</h1>
               <p className="proyectos-subtitle">
-                Explora mi portafolio de proyectos desarrollados con las últimas tecnologías
+                Explora mi portafolio de proyectos desarrollados con las últimas
+                tecnologías
               </p>
             </div>
 
@@ -75,13 +87,13 @@ export default function Proyectos() {
               {proyectos.map((proyecto) => (
                 <div key={proyecto.id} className="proyecto-card">
                   <div className="proyecto-image-container">
-                    <img 
-                      src={proyecto.imagen} 
+                    <img
+                      src={proyecto.imagen}
                       alt={proyecto.titulo}
                       className="proyecto-image"
                     />
                     <div className="proyecto-overlay">
-                      <a 
+                      <a
                         href={proyecto.link}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -92,11 +104,13 @@ export default function Proyectos() {
                       </a>
                     </div>
                   </div>
-                  
+
                   <div className="proyecto-content">
                     <h3 className="proyecto-titulo">{proyecto.titulo}</h3>
-                    <p className="proyecto-descripcion">{proyecto.descripcion}</p>
-                    
+                    <p className="proyecto-descripcion">
+                      {proyecto.descripcion}
+                    </p>
+
                     <div className="proyecto-tecnologias">
                       {proyecto.tecnologias.map((tech, index) => (
                         <span key={index} className="tech-tag">
